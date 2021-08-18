@@ -1,0 +1,19 @@
+.header-section {
+  padding: 20px 0px;
+  height: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.header-section a {
+  text-decoration: none;
+  color: black;
+}
+.header-left-section {
+  font-family: "Roboto", sans-serif;
+  letter-spacing: 3px;
+}
+.header-right-section a {
+  padding-left: 20px;
+}
