@@ -1,3 +1,10 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  background: white;
+  overflow: hidden;
+  width: 100%;
+}
 .header-section {
   padding: 20px 0px;
   height: 20px;
@@ -6,12 +13,9 @@
   align-items: center;
   flex-wrap: wrap;
 }
-.header-section a {
-  text-decoration: none;
-  color: black;
-}
 .header-left-section {
   font-family: "Roboto", sans-serif;
+  font-size: 20px;
   letter-spacing: 3px;
 }
 .header-right-section a {

@@ -1,0 +1,75 @@
+.footer-section {
+  padding: 50px 0px;
+  background: #e5e7e2;
+}
+.footer-all-section {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.footer-left-section,
+.footer-middle-section,
+.footer-right-section {
+  width: 300px;
+  margin-bottom: 50px;
+}
+
+/* Footer Left Section Styles */
+.footer-left-section h4 {
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  letter-spacing: 3px;
+}
+.footer-left-section p {
+  padding-top: 30px;
+  color: black;
+  line-height: 30px;
+  letter-spacing: 1px;
+}
+.footer-social-icons {
+  margin-top: 30px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.footer-social-icons a {
+  margin-right: 10px;
+  width: 45px;
+  height: 45px;
+  background: #8080803f;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  cursor: pointer;
+}
+.footer-social-icons a:hover {
+  background: black;
+  color: white;
+}
+
+/* Footer Left Section Styles */
+.footer-middle-section-title {
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+.footer-middle-section a {
+  display: block;
+  line-height: 30px;
+}
+
+/* Footer Right Section Styles */
+.footer-right-section-title {
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+.footer-right-section div {
+  line-height: 40px;
+  display: flex;
+  align-items: center;
+}
+.footer-right-section span {
+  margin-left: 10px;
+}

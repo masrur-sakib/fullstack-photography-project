@@ -20,9 +20,12 @@
 }
 
 /* Services Section Styles */
+.services-section {
+  background: #f4f0ed;
+}
 .services-section-title {
   padding: 20px 0px;
-  font-size: 40px;
+  font-size: 30px;
   letter-spacing: 3px;
   text-align: center;
 }
