@@ -1,0 +1,6 @@
+.checkout-section {
+  box-sizing: border-box;
+  padding: 50px 0px;
+  height: calc(100vh - 60px);
+  background: #f4f0ed;
+}

@@ -1,0 +1,42 @@
+.service-card-section {
+  margin: 20px 10px;
+  width: 300px;
+  border: 1px solid #0000001a;
+}
+.service-card-section img {
+  width: 100%;
+}
+.service-card-section:hover {
+  box-shadow: 2px 2px 10px 2px #0000001a;
+}
+.service-card-content-section {
+  padding: 20px;
+  line-height: 30px;
+  text-align: center;
+}
+.service-card-content-section p {
+  margin: 10px 0px;
+  font-size: 14px;
+  line-height: 20px;
+}
+.service-card-buttons-section {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.service-card-buttons-section a {
+  margin-top: 10px;
+  height: 40px;
+  width: 100px;
+  font-size: 14px;
+  background: #d7d7d7;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.service-card-buttons-section a:hover {
+  transform: scale(1.05);
+}

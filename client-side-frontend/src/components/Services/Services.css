@@ -1,0 +1,18 @@
+/* Services Section Styles */
+.services-section {
+  padding: 50px 0px;
+  min-height: 400px;
+  background: #f4f0ed;
+}
+.services-section-title {
+  padding-bottom: 30px;
+  font-size: 30px;
+  letter-spacing: 3px;
+  text-align: center;
+}
+.services-lists {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}

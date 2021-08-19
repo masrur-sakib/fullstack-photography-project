@@ -1,0 +1,20 @@
+/* Home Banner Section Styles */
+.home-banner-section {
+  height: calc(100vh - 60px);
+  background-image: url("../../images/bannerThree.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  color: white;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+}
+.banner-tagline-01 {
+  font-size: 30px;
+}
+.banner-tagline-02 {
+  padding-top: 1%;
+  font-size: 15px;
+}
