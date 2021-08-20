@@ -12,12 +12,7 @@ const ordersRouter = require("./routers/ordersRouter");
 const app = express();
 dotenv.config();
 
-// const corsOptions = {
-//   origin: "*",
-//   credentials: true,
-//   optionSuccessStatus: 200,
-// };
-
+// cors error handling
 app.use(cors());
 
 // MondoDB Database Connection

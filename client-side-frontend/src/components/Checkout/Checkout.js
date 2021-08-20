@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import "./Checkout.css";
 
 const Checkout = () => {
@@ -8,21 +8,26 @@ const Checkout = () => {
     address: "",
     phone: "",
   });
+  const checkoutRef = useRef(null);
 
   const userInfoHandler = (e) => {
     e.preventDefault();
 
     // Send form data to the server
-    // fetch("http://localhost:5000/orders/addOrder", {
-    //   method: "POST",
-    //   body: JSON.stringify(userInfo),
-    //   headers: { "Content-type": "application/json; charset=UTF-8" },
-    // })
-    //   .then((response) => response.json())
-    //   .then((data) => {
-    //     console.log(data.message);
-    //   })
-    //   .catch((err) => console.error(err));
+    fetch("http://localhost:5000/orders/addOrder", {
+      method: "POST",
+      body: JSON.stringify(userInfo),
+      headers: { "Content-type": "application/json; charset=UTF-8" },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        // console.log(data.message);
+        checkoutRef.current.innerText = data.message;
+        setTimeout(() => {
+          checkoutRef.current.innerText = "";
+        }, 3000);
+      })
+      .catch((err) => console.error(err));
 
     //   Reset the input fields
     setUserInfo({
@@ -49,7 +54,7 @@ const Checkout = () => {
               required
             />
             <input
-              type="text"
+              type="email"
               id="email"
               value={userInfo.email}
               onChange={(e) =>
@@ -80,7 +85,7 @@ const Checkout = () => {
             />
             <input type="submit" value="Submit" />
           </form>
-          <p className="response-msg"></p>
+          <p className="checkout-response-msg" ref={checkoutRef}></p>
         </div>
       </div>
     </div>

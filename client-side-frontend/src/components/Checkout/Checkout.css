@@ -41,3 +41,7 @@
 .add-order-form input[type="submit"]:hover {
   transform: scale(1.05);
 }
+.checkout-response-msg {
+  margin: 10px 0px;
+  color: green;
+}
