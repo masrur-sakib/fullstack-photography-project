@@ -1,6 +1,43 @@
-.checkout-section {
+.add-order-form-section {
   box-sizing: border-box;
   padding: 50px 0px;
   height: calc(100vh - 60px);
+  min-height: 500px;
   background: #f4f0ed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.add-order-form-section .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.add-order-form {
+  padding: 20px;
+  width: 300px;
+  background: white;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px 2px #0000001a;
+}
+.add-order-form h3 {
+  margin-bottom: 20px;
+}
+.add-order-form input {
+  box-sizing: border-box;
+  margin: 10px 0px;
+  padding: 10px;
+  display: block;
+  width: 100%;
+  border: 1px solid #d7d7d7;
+  border-radius: 5px;
+  outline: none;
+}
+.add-order-form input[type="submit"] {
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+.add-order-form input[type="submit"]:hover {
+  transform: scale(1.05);
 }

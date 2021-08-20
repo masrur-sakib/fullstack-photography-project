@@ -14,29 +14,7 @@ import AddServiceForm from "./components/AddServiceForm/AddServiceForm";
 export const photographyContext = createContext();
 
 function App() {
-  const [services, setServices] = useState([
-    {
-      id: 1,
-      img: "https://i.ibb.co/bNn1CZy/family-photography.jpg",
-      title: "Family Photography",
-      description: "3 Photographer, 300 Copies Photograph, 3 Hour Contract.",
-      price: "300",
-    },
-    {
-      id: 2,
-      img: "https://i.ibb.co/Rh20pn4/wedding-photography.jpg",
-      title: "Wedding Photography",
-      description: "4 Photographer, 400 Copies Photograph, 4 Hour Contract.",
-      price: "400",
-    },
-    {
-      id: 3,
-      img: "https://i.ibb.co/0sJwNjD/corporate-photography.jpg",
-      title: "Corporate Photography",
-      description: "5 Photographer, 500 Copies Photograph, 5 Hour Contract.",
-      price: "500",
-    },
-  ]);
+  const [services, setServices] = useState([]);
   return (
     <photographyContext.Provider value={{ services, setServices }}>
       <Router>

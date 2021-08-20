@@ -1,4 +1,5 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import "./AddServiceForm.css";
 
 const AddServiceForm = () => {
@@ -8,21 +9,23 @@ const AddServiceForm = () => {
     img: "",
     price: "",
   });
-
-  const formRef = useRef(null);
+  const history = useHistory();
 
   const formDataHandler = (e) => {
     e.preventDefault();
-    console.log("Before Post Request - ", formData);
 
     // Send form data to the server
-    // fetch("/addNewService", {
-    //   method: "POST",
-    //   body: JSON.stringify(formData),
-    //   headers: { "Content-type": "application/json; charset=UTF-8" },
-    // })
-    //   .then((response) => response.json())
-    //   .then((json) => console.log(json));
+    fetch("http://localhost:5000/services/addService", {
+      method: "POST",
+      body: JSON.stringify(formData),
+      headers: { "Content-type": "application/json; charset=UTF-8" },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data.message);
+        history.push("/");
+      })
+      .catch((err) => console.error(err));
 
     //   Reset the input fields
     setFormData({
@@ -37,7 +40,7 @@ const AddServiceForm = () => {
       <div className="container">
         <div className="add-service-form">
           <h3>Add New Service</h3>
-          <form id="add-service-form" ref={formRef} onSubmit={formDataHandler}>
+          <form id="add-service-form" onSubmit={formDataHandler}>
             <input
               type="text"
               id="title"

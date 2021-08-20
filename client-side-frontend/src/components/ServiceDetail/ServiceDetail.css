@@ -1,7 +1,8 @@
 .service-details-section {
   box-sizing: border-box;
   padding: 50px 0px;
-  height: calc(100vh - 60px);
+  height: fit-content;
+  text-align: center;
   background: #f4f0ed;
 }
 .service-details-img-section {
@@ -12,7 +13,8 @@
 }
 .service-details-section img {
   width: 80%;
-  max-width: 1000px;
+  max-height: 100%;
+  max-width: 500px;
 }
 .service-details-section p {
   line-height: 40px;

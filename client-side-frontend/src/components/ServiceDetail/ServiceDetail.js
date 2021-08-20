@@ -6,8 +6,7 @@ import "./ServiceDetail.css";
 const ServiceDetail = () => {
   const { serviceId } = useParams();
   const { services } = useContext(photographyContext);
-  const currentService = services[serviceId - 1];
-  console.log(currentService);
+  const currentService = services.find((service) => service._id === serviceId);
 
   return (
     <div className="service-details-section">
@@ -16,9 +15,9 @@ const ServiceDetail = () => {
           <img src={currentService.img} alt="service-detail-img"></img>
         </div>
         <p>
-          <strong> {currentService.title} Detail: </strong>
-          {currentService.description}{" "}
+          <strong> {currentService.title} </strong>Detail:
         </p>
+        <p>{currentService.description} </p>
         <p>
           Package Price: <strong> ${currentService.price}</strong>{" "}
         </p>

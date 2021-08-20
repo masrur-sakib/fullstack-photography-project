@@ -1,11 +1,19 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { photographyContext } from "../../App";
 import AddService from "../AddServiceCard/AddServiceCard";
 import ServiceCard from "../ServiceCard/ServiceCard";
 import "./Services.css";
 
 const Services = () => {
-  const { services } = useContext(photographyContext);
+  const { services, setServices } = useContext(photographyContext);
+  useEffect(() => {
+    fetch("http://localhost:5000/services")
+      .then((response) => response.json())
+      .then((data) => {
+        setServices(data);
+      })
+      .catch((err) => console.error(err));
+  }, [setServices]);
   return (
     <div className="services-section">
       <div className="container">
