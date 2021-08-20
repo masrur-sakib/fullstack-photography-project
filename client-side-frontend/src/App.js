@@ -9,6 +9,7 @@ import Footer from "./components/Footer/Footer";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 import Checkout from "./components/Checkout/Checkout";
+import AddServiceForm from "./components/AddServiceForm/AddServiceForm";
 
 export const photographyContext = createContext();
 
@@ -50,6 +51,9 @@ function App() {
           </Route>
           <Route path="/service-detail/:serviceId">
             <ServiceDetail />
+          </Route>
+          <Route path="/add-new-service">
+            <AddServiceForm />
           </Route>
           <Route path="/checkout">
             <Checkout />

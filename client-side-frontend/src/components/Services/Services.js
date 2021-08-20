@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { photographyContext } from "../../App";
+import AddService from "../AddServiceCard/AddServiceCard";
 import ServiceCard from "../ServiceCard/ServiceCard";
 import "./Services.css";
 
@@ -13,6 +14,7 @@ const Services = () => {
           {services.map((service, index) => (
             <ServiceCard key={index} service={service} />
           ))}
+          <AddService />
         </div>
       </div>
     </div>

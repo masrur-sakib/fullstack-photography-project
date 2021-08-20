@@ -1,13 +1,13 @@
 .navbar {
+  width: 100%;
   position: sticky;
   top: 0;
   background: white;
   overflow: hidden;
-  width: 100%;
 }
 .header-section {
-  padding: 20px 0px;
-  height: 20px;
+  box-sizing: border-box;
+  height: 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
