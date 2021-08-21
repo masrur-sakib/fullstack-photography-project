@@ -1,6 +1,6 @@
 // External Imports
 const express = require("express");
-const { addPeople } = require("../controllers/loginController");
+const { addPeople, processLogin } = require("../controllers/loginController");
 
 const router = express.Router();
 
@@ -8,8 +8,6 @@ const router = express.Router();
 router.post("/addPeople", addPeople);
 
 // Login
-router.get("/", (req, res) => {
-  res.send("Get People Logged In");
-});
+router.post("/", processLogin);
 
 module.exports = router;

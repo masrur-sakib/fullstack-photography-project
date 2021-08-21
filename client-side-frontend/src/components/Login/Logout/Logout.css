@@ -1,0 +1,30 @@
+.logout-form {
+  padding: 20px;
+  width: 300px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px 2px #0000001a;
+}
+.logout-form h4 {
+  margin-bottom: 10px;
+  text-align: center;
+}
+.logout-form p {
+  margin: 10px 0px;
+}
+.logout-button {
+  margin-top: 10px;
+  padding: 10px 0px;
+  width: 100%;
+  font-size: 16px;
+  color: white;
+  background: #d30606;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.logout-button:hover {
+  transform: scale(1.05);
+}

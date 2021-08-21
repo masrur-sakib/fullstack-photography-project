@@ -8,7 +8,7 @@ const LoginForm = () => {
     email: "",
     password: "",
   });
-  const { loggedInUserData, setLoggedInUserData, setRegisteredUser } =
+  const { setLoggedInUserData, setRegisteredUser } =
     useContext(photographyContext);
   const loginRef = useRef(null);
 
@@ -16,18 +16,22 @@ const LoginForm = () => {
     e.preventDefault();
 
     // Login
-    fetch(`${process.env.REACT_APP_BACKEND_API}/login`)
+    fetch(`${process.env.REACT_APP_BACKEND_API}/login`, {
+      method: "POST",
+      body: JSON.stringify(loginInfo),
+      headers: { "Content-type": "application/json; charset=UTF-8" },
+    })
       .then((response) => response.json())
       .then((data) => {
-        setLoggedInUserData(data);
-        loginRef.current.innerText = data.message;
-        setTimeout(() => {
-          loginRef.current.innerText = "";
-        }, 4000);
+        setLoggedInUserData(data.userData);
+        // loginRef.current.innerText = data.message;
+        // setTimeout(() => {
+        //   loginRef.current.innerText = "";
+        // }, 4000);
       })
       .catch((err) => console.error(err));
 
-    //   Reset the input fields
+    // Reset the input fields
     setLoginInfo({
       email: "",
       password: "",

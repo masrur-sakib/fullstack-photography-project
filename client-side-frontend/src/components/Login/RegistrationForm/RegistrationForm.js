@@ -13,7 +13,7 @@ const RegistrationForm = () => {
   const registrationHandler = (e) => {
     e.preventDefault();
 
-    // Send form data to the server
+    // Registration
     fetch(`${process.env.REACT_APP_BACKEND_API}/login/addPeople`, {
       method: "POST",
       body: JSON.stringify(registrationInfo),
@@ -24,7 +24,7 @@ const RegistrationForm = () => {
         registrationRef.current.innerText = data.message;
         setTimeout(() => {
           registrationRef.current.innerText = "";
-        }, 4000);
+        }, 2000);
       })
       .catch((err) => console.error(err));
 

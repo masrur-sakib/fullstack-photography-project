@@ -8,7 +8,7 @@ const Header = () => {
       <div className="container ">
         <div className="navbar">
           <div className="header-left-section">
-            <a href="/">[ELITE]</a>
+            <Link to="/">[ELITE]</Link>
           </div>
           <div className="header-right-section">
             <Link to="/">Home</Link>

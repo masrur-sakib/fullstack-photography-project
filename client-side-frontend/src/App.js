@@ -6,7 +6,12 @@ import ServiceDetail from "./components/ServiceDetail/ServiceDetail";
 import Login from "./components/Login/Login";
 import NotFound from "./components/NotFound/NotFound";
 import Footer from "./components/Footer/Footer";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 import "./App.css";
 import Checkout from "./components/Checkout/Checkout";
 import AddServiceForm from "./components/AddServiceForm/AddServiceForm";
@@ -15,9 +20,10 @@ export const photographyContext = createContext();
 
 function App() {
   const [registeredUser, setRegisteredUser] = useState(true);
-  const [loggedInUserData, setLoggedInUserData] = useState(true);
+  const [loggedInUserData, setLoggedInUserData] = useState({});
   const [services, setServices] = useState([]);
   const [orders, setOrders] = useState([]);
+
   return (
     <photographyContext.Provider
       value={{
@@ -39,7 +45,7 @@ function App() {
             <Home />
           </Route>
           <Route path="/orders">
-            <Orders />
+            {loggedInUserData._id ? <Orders /> : <Redirect to="/login" />}
           </Route>
           <Route path="/service-detail/:serviceId">
             <ServiceDetail />
@@ -48,7 +54,7 @@ function App() {
             <AddServiceForm />
           </Route>
           <Route path="/checkout/:serviceId">
-            <Checkout />
+            {loggedInUserData._id ? <Checkout /> : <Redirect to="/login" />}
           </Route>
           <Route path="/login">
             <Login />

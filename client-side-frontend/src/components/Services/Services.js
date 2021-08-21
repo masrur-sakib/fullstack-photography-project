@@ -5,7 +5,8 @@ import ServiceCard from "../ServiceCard/ServiceCard";
 import "./Services.css";
 
 const Services = () => {
-  const { services, setServices } = useContext(photographyContext);
+  const { services, setServices, loggedInUserData } =
+    useContext(photographyContext);
   useEffect(() => {
     fetch(`${process.env.REACT_APP_BACKEND_API}/services`)
       .then((response) => response.json())
@@ -22,7 +23,7 @@ const Services = () => {
           {services.map((service, index) => (
             <ServiceCard key={index} service={service} />
           ))}
-          <AddService />
+          {loggedInUserData.role === "admin" ? <AddService /> : ""}
         </div>
       </div>
     </div>

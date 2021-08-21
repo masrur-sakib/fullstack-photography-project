@@ -2,15 +2,22 @@ import React, { useContext } from "react";
 import { photographyContext } from "../../App";
 import "./Login.css";
 import LoginForm from "./LoginForm/LoginForm";
+import Logout from "./Logout/Logout";
 import RegistrationForm from "./RegistrationForm/RegistrationForm";
 
 const Login = () => {
-  const { registeredUser, setRegisteredUser } = useContext(photographyContext);
+  const { registeredUser, loggedInUserData } = useContext(photographyContext);
 
   return (
     <div className="login-section">
       <div className="container">
-        {registeredUser ? <LoginForm /> : <RegistrationForm />}
+        {loggedInUserData._id ? (
+          <Logout />
+        ) : registeredUser ? (
+          <LoginForm />
+        ) : (
+          <RegistrationForm />
+        )}
       </div>
     </div>
   );

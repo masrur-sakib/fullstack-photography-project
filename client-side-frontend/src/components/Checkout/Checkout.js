@@ -27,7 +27,7 @@ const Checkout = () => {
         checkoutRef.current.innerText = data.message;
         setTimeout(() => {
           checkoutRef.current.innerText = "";
-        }, 4000);
+        }, 2000);
       })
       .catch((err) => console.error(err));
 
