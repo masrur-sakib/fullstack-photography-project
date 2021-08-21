@@ -1,27 +1,39 @@
-import React, { useContext } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { photographyContext } from "../../App";
 import "./ServiceDetail.css";
 
 const ServiceDetail = () => {
   const { serviceId } = useParams();
-  const { services } = useContext(photographyContext);
-  const currentService = services.find((service) => service._id === serviceId);
+  const [currentService, setCurrentService] = useState(null);
+
+  useEffect(() => {
+    fetch(`http://localhost:5000/services/${serviceId}`)
+      .then((response) => response.json())
+      .then((data) => {
+        setCurrentService(data[0]);
+      })
+      .catch((err) => console.error(err));
+  }, [serviceId, setCurrentService]);
 
   return (
     <div className="service-details-section">
       <div className="container">
-        <div className="service-details-img-section">
-          <img src={currentService.img} alt="service-detail-img"></img>
-        </div>
-        <p>
-          <strong> {currentService.title} </strong>Detail:
-        </p>
-        <p>{currentService.description} </p>
-        <p>
-          Package Price: <strong> ${currentService.price}</strong>{" "}
-        </p>
-        <p></p>
+        {currentService ? (
+          <div>
+            <div className="service-details-img-section">
+              <img src={currentService.img} alt="service-detail-img"></img>
+            </div>
+            <p>
+              <strong> {currentService.title} </strong>Detail:
+            </p>
+            <p>{currentService.description} </p>
+            <p>
+              Package Price: <strong> ${currentService.price}</strong>{" "}
+            </p>
+          </div>
+        ) : (
+          ""
+        )}
       </div>
     </div>
   );

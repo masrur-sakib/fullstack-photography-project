@@ -25,7 +25,19 @@ async function getServices(req, res, next) {
   }
 }
 
+// Get Selected Service Detail
+async function getServiceDetail(req, res, next) {
+  const serviceId = req.params.serviceId;
+  try {
+    const serviceDetail = await Service.find({ _id: serviceId });
+    res.status(200).json(serviceDetail);
+  } catch (err) {
+    next(err);
+  }
+}
+
 module.exports = {
   addService,
   getServices,
+  getServiceDetail,
 };
