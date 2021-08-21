@@ -1,4 +1,5 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { useParams } from "react-router";
 import "./Checkout.css";
 
 const Checkout = () => {
@@ -8,24 +9,25 @@ const Checkout = () => {
     address: "",
     phone: "",
   });
+  const { serviceId } = useParams();
+  const [selectedService, setSelectedService] = useState(null);
   const checkoutRef = useRef(null);
 
   const userInfoHandler = (e) => {
     e.preventDefault();
 
     // Send form data to the server
-    fetch("http://localhost:5000/orders/addOrder", {
+    fetch(`${process.env.REACT_APP_BACKEND_API}/orders/addOrder`, {
       method: "POST",
-      body: JSON.stringify(userInfo),
+      body: JSON.stringify({ ...userInfo, serviceInfo: selectedService }),
       headers: { "Content-type": "application/json; charset=UTF-8" },
     })
       .then((response) => response.json())
       .then((data) => {
-        // console.log(data.message);
         checkoutRef.current.innerText = data.message;
         setTimeout(() => {
           checkoutRef.current.innerText = "";
-        }, 3000);
+        }, 4000);
       })
       .catch((err) => console.error(err));
 
@@ -37,6 +39,16 @@ const Checkout = () => {
       phone: "",
     });
   };
+
+  useEffect(() => {
+    fetch(`${process.env.REACT_APP_BACKEND_API}/services/${serviceId}`)
+      .then((response) => response.json())
+      .then((data) => {
+        setSelectedService(data[0]);
+      })
+      .catch((err) => console.error(err));
+  }, [serviceId, setSelectedService]);
+
   return (
     <div className="add-order-form-section">
       <div className="container">

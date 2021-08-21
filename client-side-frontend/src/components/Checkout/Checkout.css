@@ -2,7 +2,7 @@
   box-sizing: border-box;
   padding: 50px 0px;
   height: calc(100vh - 60px);
-  min-height: 500px;
+  min-height: 400px;
   background: #f4f0ed;
   display: flex;
   justify-content: center;

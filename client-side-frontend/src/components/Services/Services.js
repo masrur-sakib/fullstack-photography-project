@@ -7,7 +7,7 @@ import "./Services.css";
 const Services = () => {
   const { services, setServices } = useContext(photographyContext);
   useEffect(() => {
-    fetch("http://localhost:5000/services")
+    fetch(`${process.env.REACT_APP_BACKEND_API}/services`)
       .then((response) => response.json())
       .then((data) => {
         setServices(data);

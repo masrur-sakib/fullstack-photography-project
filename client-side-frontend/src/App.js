@@ -15,8 +15,11 @@ export const photographyContext = createContext();
 
 function App() {
   const [services, setServices] = useState([]);
+  const [orders, setOrders] = useState([]);
   return (
-    <photographyContext.Provider value={{ services, setServices }}>
+    <photographyContext.Provider
+      value={{ services, setServices, orders, setOrders }}
+    >
       <Router>
         {/* Header/Navbar Section */}
         <Header />
@@ -33,7 +36,7 @@ function App() {
           <Route path="/add-new-service">
             <AddServiceForm />
           </Route>
-          <Route path="/checkout">
+          <Route path="/checkout/:serviceId">
             <Checkout />
           </Route>
           <Route path="/login">

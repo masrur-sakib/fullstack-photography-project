@@ -22,6 +22,15 @@ const orderSchema = mongoose.Schema(
       required: true,
       trim: true,
     },
+    status: {
+      type: String,
+      enum: ["pending", "inprogress", "done"],
+      default: "pending",
+    },
+    serviceInfo: {
+      type: Object,
+      required: true,
+    },
   },
   {
     timestamps: true,

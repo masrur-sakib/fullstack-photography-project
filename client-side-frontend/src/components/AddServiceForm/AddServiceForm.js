@@ -15,7 +15,7 @@ const AddServiceForm = () => {
     e.preventDefault();
 
     // Send form data to the server
-    fetch("http://localhost:5000/services/addService", {
+    fetch(`${process.env.REACT_APP_BACKEND_API}/services/addService`, {
       method: "POST",
       body: JSON.stringify(formData),
       headers: { "Content-type": "application/json; charset=UTF-8" },

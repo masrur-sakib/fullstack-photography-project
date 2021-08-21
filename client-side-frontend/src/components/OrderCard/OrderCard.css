@@ -1,0 +1,25 @@
+.order-card-section {
+  margin: 20px 10px;
+  width: 300px;
+  border: 1px solid #0000001a;
+  box-shadow: 2px 2px 10px 2px #0000001a;
+}
+.order-card-content-section {
+  padding: 20px;
+  line-height: 30px;
+}
+.order-card-content-section h5 {
+  text-align: center;
+}
+.order-card-content-section p {
+  margin: 10px 0px;
+  font-size: 14px;
+  line-height: 20px;
+}
+.order-card-content-section div,
+.order-status {
+  padding-top: 20px;
+}
+.order-status strong {
+  text-transform: uppercase;
+}

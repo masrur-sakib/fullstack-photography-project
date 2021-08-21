@@ -4,31 +4,31 @@ import "./ServiceDetail.css";
 
 const ServiceDetail = () => {
   const { serviceId } = useParams();
-  const [currentService, setCurrentService] = useState(null);
+  const [selectedService, setSelectedService] = useState(null);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/services/${serviceId}`)
+    fetch(`${process.env.REACT_APP_BACKEND_API}/services/${serviceId}`)
       .then((response) => response.json())
       .then((data) => {
-        setCurrentService(data[0]);
+        setSelectedService(data[0]);
       })
       .catch((err) => console.error(err));
-  }, [serviceId, setCurrentService]);
+  }, [serviceId, setSelectedService]);
 
   return (
     <div className="service-details-section">
       <div className="container">
-        {currentService ? (
+        {selectedService ? (
           <div>
             <div className="service-details-img-section">
-              <img src={currentService.img} alt="service-detail-img"></img>
+              <img src={selectedService.img} alt="service-detail-img"></img>
             </div>
             <p>
-              <strong> {currentService.title} </strong>Detail:
+              <strong> {selectedService.title} </strong>Detail:
             </p>
-            <p>{currentService.description} </p>
+            <p>{selectedService.description} </p>
             <p>
-              Package Price: <strong> ${currentService.price}</strong>{" "}
+              Package Price: <strong> ${selectedService.price}</strong>{" "}
             </p>
           </div>
         ) : (
