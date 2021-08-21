@@ -10,7 +10,6 @@ const Orders = () => {
       .then((response) => response.json())
       .then((data) => {
         setOrders(data);
-        console.log(data);
       })
       .catch((err) => console.error(err));
   }, [setOrders]);

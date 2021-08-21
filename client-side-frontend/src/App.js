@@ -14,11 +14,22 @@ import AddServiceForm from "./components/AddServiceForm/AddServiceForm";
 export const photographyContext = createContext();
 
 function App() {
+  const [registeredUser, setRegisteredUser] = useState(true);
+  const [loggedInUserData, setLoggedInUserData] = useState(true);
   const [services, setServices] = useState([]);
   const [orders, setOrders] = useState([]);
   return (
     <photographyContext.Provider
-      value={{ services, setServices, orders, setOrders }}
+      value={{
+        registeredUser,
+        setRegisteredUser,
+        loggedInUserData,
+        setLoggedInUserData,
+        services,
+        setServices,
+        orders,
+        setOrders,
+      }}
     >
       <Router>
         {/* Header/Navbar Section */}

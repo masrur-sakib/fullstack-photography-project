@@ -1,0 +1,24 @@
+.login-section {
+  box-sizing: border-box;
+  padding: 50px 0px;
+  height: calc(100vh - 60px);
+  background: #f4f0ed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-section .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login-note {
+  margin-top: 20px;
+  font-size: 12px;
+}
+.login-note span {
+  margin-left: 5px;
+  font-weight: 700;
+  cursor: pointer;
+}
