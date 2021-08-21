@@ -1,6 +1,6 @@
 # Full Stack Photography Project:
 
-#### It’s a full-stack photography web application. I developed this application frontend using React.js and backend using Node.js, Express.js. I used NoSQL database MongoDB for for this application.
+#### It’s a full-stack photography web application. I developed this application frontend using React.js and backend using Node.js, Express.js. I used NoSQL database MongoDB for this application.
 
 ## Technology Used:
 
