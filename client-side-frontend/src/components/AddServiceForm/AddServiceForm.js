@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import "./AddServiceForm.css";
 
@@ -35,6 +35,10 @@ const AddServiceForm = () => {
       price: "",
     });
   };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="add-service-form-section">
       <div className="container">

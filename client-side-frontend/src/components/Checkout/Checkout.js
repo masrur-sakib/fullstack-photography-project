@@ -49,6 +49,10 @@ const Checkout = () => {
       .catch((err) => console.error(err));
   }, [serviceId, setSelectedService]);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="add-order-form-section">
       <div className="container">

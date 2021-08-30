@@ -1,8 +1,7 @@
 .orders-section {
   box-sizing: border-box;
   padding: 50px 0px;
-  height: calc(100vh - 60px);
-  min-height: 400px;
+  min-height: calc(100vh - 60px);
   background: #f4f0ed;
 }
 .orders-section-title {
@@ -11,7 +10,8 @@
   letter-spacing: 3px;
   text-align: center;
 }
-.orders-lists {
+.orders-lists,
+.orders-loading-section {
   display: flex;
   justify-content: space-around;
   align-items: center;

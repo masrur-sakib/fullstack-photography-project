@@ -1,22 +1,28 @@
-.service-details-section {
+.service-detail-section {
   box-sizing: border-box;
   padding: 50px 0px;
-  height: calc(100vh - 60px);
-  min-height: 400px;
+  min-height: calc(100vh - 60px);
   text-align: center;
   background: #f4f0ed;
 }
-.service-details-img-section {
+.service-detail-section-title {
+  padding-bottom: 30px;
+  font-size: 25px;
+  letter-spacing: 3px;
+  text-align: center;
+}
+.service-detail-img-section,
+.serviceDetail-loading-section {
   margin-bottom: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.service-details-section img {
+.service-detail-section img {
   width: 80%;
   max-height: 100%;
   max-width: 500px;
 }
-.service-details-section p {
+.service-detail-section p {
   line-height: 40px;
 }

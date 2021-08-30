@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./NotFound.css";
 
 const NotFound = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="not-found-page">
       <div>

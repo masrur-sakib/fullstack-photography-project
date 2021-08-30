@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { photographyContext } from "../../App";
 import "./Login.css";
 import LoginForm from "./LoginForm/LoginForm";
@@ -7,7 +7,9 @@ import RegistrationForm from "./RegistrationForm/RegistrationForm";
 
 const Login = () => {
   const { registeredUser, loggedInUserData } = useContext(photographyContext);
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="login-section">
       <div className="container">

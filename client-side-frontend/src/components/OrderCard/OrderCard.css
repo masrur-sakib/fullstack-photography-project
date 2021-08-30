@@ -16,10 +16,40 @@
   font-size: 14px;
   line-height: 20px;
 }
-.order-card-content-section div,
-.order-status {
+.ordered-service-info-section,
+.shipping-info-section,
+.order-status-section {
+  padding-top: 20px;
+}
+.order-status-section {
   padding-top: 20px;
 }
 .order-status strong {
   text-transform: uppercase;
+}
+.order-status-update-buttons-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.order-status-update-buttons-section button {
+  margin: 10px;
+  padding: 10px 0px;
+  height: 30px;
+  width: 100px;
+  font-size: 12px;
+  text-transform: uppercase;
+  background: #e5e7e2;
+  border: 1px solid grey;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.order-status-update-buttons-section button:hover {
+  transform: scale(1.05);
 }

@@ -23,6 +23,7 @@ function App() {
   const [loggedInUserData, setLoggedInUserData] = useState({});
   const [services, setServices] = useState([]);
   const [orders, setOrders] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   return (
     <photographyContext.Provider
@@ -35,6 +36,8 @@ function App() {
         setServices,
         orders,
         setOrders,
+        loading,
+        setLoading,
       }}
     >
       <Router>
@@ -44,19 +47,19 @@ function App() {
           <Route exact path="/">
             <Home />
           </Route>
-          <Route path="/orders">
+          <Route exact path="/orders">
             {loggedInUserData._id ? <Orders /> : <Redirect to="/login" />}
           </Route>
           <Route path="/service-detail/:serviceId">
             <ServiceDetail />
           </Route>
-          <Route path="/add-new-service">
+          <Route exact path="/add-new-service">
             <AddServiceForm />
           </Route>
           <Route path="/checkout/:serviceId">
             {loggedInUserData._id ? <Checkout /> : <Redirect to="/login" />}
           </Route>
-          <Route path="/login">
+          <Route exact path="/login">
             <Login />
           </Route>
           <Route path="*">
