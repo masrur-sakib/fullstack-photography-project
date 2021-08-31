@@ -53,7 +53,13 @@
 .order-status-update-buttons-section button:hover {
   transform: scale(1.05);
 }
-.update-status-response-msg {
-  margin: 10px 0px;
-  color: green;
+.update-order-status-section select {
+  margin-left: 5px;
+  padding: 3px;
+  background: #e5e7e2;
+  border: 1px solid #8080807e;
+  border-radius: 5px;
+  outline: none;
+  font-size: 12px;
+  text-transform: uppercase;
 }

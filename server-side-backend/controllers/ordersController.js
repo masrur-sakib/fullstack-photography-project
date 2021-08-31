@@ -28,16 +28,19 @@ async function getOrders(req, res, next) {
 // Update Order Status
 async function updateOrderStatus(req, res, next) {
   try {
-    const result = await Order.updateOne(
+    const result = await Order.findOneAndUpdate(
       { _id: req.body.id },
-      {
-        status: req.body.status,
-      }
+      { status: req.body.status },
+      { new: true }
     );
+    // const result = await Order.updateOne(
+    //   { _id: req.body.id },
+    //   {
+    //     status: req.body.status,
+    //   }
+    // );
 
-    res.status(200).json({
-      message: "Order status updated successfully.",
-    });
+    res.status(200).json(result);
   } catch (err) {
     next(err);
   }

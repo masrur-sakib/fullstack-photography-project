@@ -29,7 +29,9 @@ const Orders = () => {
         </div>
         <div className="orders-lists">
           {orders.map((order, index) =>
-            order.email === loggedInUserData.email ? (
+            loggedInUserData.role === "admin" ? (
+              <OrderCard key={index} order={order} />
+            ) : order.email === loggedInUserData.email ? (
               <OrderCard key={index} order={order} />
             ) : (
               ""

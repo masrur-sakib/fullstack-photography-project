@@ -1,13 +1,13 @@
-import React, { useContext, useRef } from "react";
+import React, { useContext, useState } from "react";
 import { photographyContext } from "../../App";
 import "./OrderCard.css";
 
-const OrderCard = ({ order }) => {
+const OrderCard = (props) => {
   const { loggedInUserData } = useContext(photographyContext);
-  const updateStatusRef = useRef(null);
+  const [order, setOrder] = useState(props.order);
 
-  const changeOrderStatus = (e) => {
-    const changedStatus = e.target.innerText.toLowerCase();
+  const updateOrderStatus = (e) => {
+    const changedStatus = e.target.value.toLowerCase();
 
     // Login
     fetch(`${process.env.REACT_APP_BACKEND_API}/orders/updateOrderStatus`, {
@@ -20,10 +20,7 @@ const OrderCard = ({ order }) => {
     })
       .then((response) => response.json())
       .then((data) => {
-        updateStatusRef.current.innerText = data.message;
-        setTimeout(() => {
-          updateStatusRef.current.innerText = "";
-        }, 2000);
+        setOrder(data);
       })
       .catch((err) => console.error(err));
   };
@@ -52,18 +49,23 @@ const OrderCard = ({ order }) => {
             <strong className="order-current-status">{order.status}</strong>
           </p>
           {loggedInUserData.role === "admin" ? (
-            <div>
-              <p>Change Order Status to:</p>
-              <div className="order-status-update-buttons-section">
-                <button onClick={changeOrderStatus}>inprogress</button>
-                <button onClick={changeOrderStatus}>done</button>
-              </div>
+            <div className="update-order-status-section">
+              <label htmlFor="update-status-dropdown">Update Status:</label>
+              <select
+                id="update-status-dropdown"
+                name="orderStatus"
+                onChange={updateOrderStatus}
+                value={order.status}
+              >
+                <option value="pending">pending</option>
+                <option value="inprogress">inprogress</option>
+                <option value="done">done</option>
+              </select>
             </div>
           ) : (
             ""
           )}
         </div>
-        <p className="update-status-response-msg" ref={updateStatusRef}></p>
       </div>
     </div>
   );
