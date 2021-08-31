@@ -11,6 +11,17 @@
 - Mongoose
 - Heroku
 
+## Admin Login Credential:
+
+```
+Email: test@elite.com
+Password: test1234
+```
+
+## Project Link:
+
+<a  target="_blank" href="https://masrursakib-photography-project.netlify.app/">Project Live Link</a>
+
 ## Screenshots
 
 #### Home Page:
@@ -32,15 +43,3 @@
 #### Add New Service Page:
 
 ![addNewServicePage](https://github.com/masrur-sakib/photography-project/blob/main/screenshots/addNewServicePage.png?raw=true)
-
-## Admin Login Credential
-
-```
-Email: test@elite.com
-Password: test1234
-
-```
-
-## Project Link
-
-<a  target="_blank" href="https://masrursakib-photography-project.netlify.app/">Project Live Link</a>
