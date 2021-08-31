@@ -1,9 +1,32 @@
-import React, { useContext } from "react";
+import React, { useContext, useRef } from "react";
 import { photographyContext } from "../../App";
 import "./OrderCard.css";
 
 const OrderCard = ({ order }) => {
   const { loggedInUserData } = useContext(photographyContext);
+  const updateStatusRef = useRef(null);
+
+  const changeOrderStatus = (e) => {
+    const changedStatus = e.target.innerText.toLowerCase();
+
+    // Login
+    fetch(`${process.env.REACT_APP_BACKEND_API}/orders/updateOrderStatus`, {
+      method: "PATCH",
+      body: JSON.stringify({
+        id: order._id,
+        status: changedStatus,
+      }),
+      headers: { "Content-type": "application/json; charset=UTF-8" },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        updateStatusRef.current.innerText = data.message;
+        setTimeout(() => {
+          updateStatusRef.current.innerText = "";
+        }, 2000);
+      })
+      .catch((err) => console.error(err));
+  };
   return (
     <div className="order-card-section">
       <div className="order-card-content-section">
@@ -32,14 +55,15 @@ const OrderCard = ({ order }) => {
             <div>
               <p>Change Order Status to:</p>
               <div className="order-status-update-buttons-section">
-                <button>inprogress</button>
-                <button>done</button>
+                <button onClick={changeOrderStatus}>inprogress</button>
+                <button onClick={changeOrderStatus}>done</button>
               </div>
             </div>
           ) : (
             ""
           )}
         </div>
+        <p className="update-status-response-msg" ref={updateStatusRef}></p>
       </div>
     </div>
   );

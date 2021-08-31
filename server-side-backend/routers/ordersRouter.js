@@ -1,6 +1,10 @@
 // External Imports
 const express = require("express");
-const { addOrder, getOrders } = require("../controllers/ordersController");
+const {
+  addOrder,
+  getOrders,
+  updateOrderStatus,
+} = require("../controllers/ordersController");
 
 const router = express.Router();
 
@@ -9,5 +13,8 @@ router.post("/addOrder", addOrder);
 
 // Fetch All Orders
 router.get("/", getOrders);
+
+// Update Order Status
+router.patch("/updateOrderStatus", updateOrderStatus);
 
 module.exports = router;

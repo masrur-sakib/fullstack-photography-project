@@ -53,3 +53,7 @@
 .order-status-update-buttons-section button:hover {
   transform: scale(1.05);
 }
+.update-status-response-msg {
+  margin: 10px 0px;
+  color: green;
+}

@@ -25,7 +25,26 @@ async function getOrders(req, res, next) {
   }
 }
 
+// Update Order Status
+async function updateOrderStatus(req, res, next) {
+  try {
+    const result = await Order.updateOne(
+      { _id: req.body.id },
+      {
+        status: req.body.status,
+      }
+    );
+
+    res.status(200).json({
+      message: "Order status updated successfully.",
+    });
+  } catch (err) {
+    next(err);
+  }
+}
+
 module.exports = {
   addOrder,
   getOrders,
+  updateOrderStatus,
 };
