@@ -4,26 +4,12 @@
 
 ## Technology Used:
 
-<ul>
-    <li>
-        <h5>React.js</h5>
-    </li>
-    <li>
-        <h5>Node.js</h5>
-    </li>
-    <li>
-        <h5>Express.js</h5>
-    </li>
-    <li>
-        <h5>MongoDB</h5>
-    </li>
-    <li>
-        <h5>Mongoose</h5>
-    </li>
-    <li>
-        <h5>Heroku</h5>
-    </li>
-</ul>
+- React.js
+- Node.js
+- Express.js
+- MongoDB
+- Mongoose
+- Heroku
 
 ## Screenshots
 
@@ -46,6 +32,14 @@
 #### Add New Service Page:
 
 ![addNewServicePage](https://github.com/masrur-sakib/photography-project/blob/main/screenshots/addNewServicePage.png?raw=true)
+
+## Admin Login Credential
+
+```
+Email: test@elite.com
+Password: test1234
+
+```
 
 ## Project Link
 
