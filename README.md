@@ -1,28 +1,30 @@
-# Full Stack Photography Project:
+## Full Stack Photography Project:
 
 #### It’s a full-stack photography web application. I developed this application frontend using React.js and backend using Node.js, Express.js. I used NoSQL database MongoDB for this application.
 
-## Technology Used:
+### Technology Used:
 
-- React.js
-- Node.js
-- Express.js
-- MongoDB
-- Mongoose
-- Heroku
+- **React.js**
+- **Node.js**
+- **Express.js**
+- **MongoDB**
+- **Mongoose**
+- **Heroku**
+- **HTML**
+- **CSS**
 
-## Admin Login Credential:
+### Admin Login Credential:
 
 ```
 Email: test@elite.com
 Password: test1234
 ```
 
-## Project Link:
+### Project Link:
 
 <a  target="_blank" href="https://masrursakib-photography-project.netlify.app/">Project Live Link</a>
 
-## Screenshots
+### Screenshots
 
 #### Home Page:
 
